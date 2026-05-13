@@ -15,28 +15,28 @@
   <style>
     /* Design tokens: update these values later to safely change the visual system. */
     :root {
-      --bg: #f4f9ff;
-      --bg-soft: #eaf4ff;
-      --bg-card: rgba(255, 255, 255, 0.86);
+      --bg: #fcfcfd;
+      --bg-soft: #f8fafc;
+      --bg-card: rgba(255, 255, 255, 0.88);
       --bg-card-solid: #ffffff;
-      --text: #19324f;
-      --text-strong: #071a33;
-      --muted: #5d718a;
-      --muted-2: #8aa0b8;
-      --accent: #0077ff;
-      --accent-2: #00a6ff;
-      --accent-3: #0f3f8c;
-      --border: rgba(29, 78, 216, 0.12);
-      --border-strong: rgba(0, 119, 255, 0.28);
-      --shadow: 0 24px 70px rgba(26, 57, 101, 0.12);
-      --glow: 0 18px 56px rgba(0, 119, 255, 0.18);
+      --text: #334155;
+      --text-strong: #0f172a;
+      --muted: #64748b;
+      --muted-2: #94a3b8;
+      --accent: #4f46e5;
+      --accent-2: #7c3aed;
+      --accent-3: #312e81;
+      --border: rgba(15, 23, 42, 0.08);
+      --border-strong: rgba(79, 70, 229, 0.24);
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+      --glow: 0 18px 56px rgba(79, 70, 229, 0.16);
       --radius-lg: 28px;
       --radius-md: 20px;
       --radius-sm: 14px;
       --container: 1140px;
       --section-space: 112px;
       --nav-height: 76px;
-      --transition: 220ms ease;
+      --transition: 300ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -55,9 +55,9 @@
       overflow-x: hidden;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(0, 166, 255, 0.16), transparent 32rem),
-        radial-gradient(circle at 78% 10%, rgba(59, 130, 246, 0.12), transparent 28rem),
-        linear-gradient(180deg, #f7fbff 0%, #edf6ff 44%, #f8fbff 100%),
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.08), transparent 32rem),
+        radial-gradient(circle at 78% 10%, rgba(79, 70, 229, 0.06), transparent 28rem),
+        linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,250,252,0.6) 44%, rgba(252,252,253,1) 100%),
         var(--bg);
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.65;
@@ -70,6 +70,11 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    *:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
 
     img, svg {
@@ -209,7 +214,7 @@
     .nav-link {
       display: inline-flex;
       align-items: center;
-      min-height: 40px;
+      min-height: 44px;
       padding: 0 12px;
       border-radius: 999px;
       color: var(--muted);
@@ -220,7 +225,7 @@
 
     .nav-link:hover,
     .nav-link.active {
-      background: rgba(0, 119, 255, 0.09);
+      background: rgba(79, 70, 229, 0.08);
       color: var(--accent-3);
     }
 
@@ -228,7 +233,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      min-height: 42px;
+      min-height: 44px;
       padding: 0 16px;
       border: 1px solid var(--border-strong);
       border-radius: 999px;
@@ -240,7 +245,7 @@
     }
 
     .nav-cta:hover {
-      background: rgba(0, 119, 255, 0.08);
+      background: rgba(79, 70, 229, 0.08);
       box-shadow: var(--glow);
       transform: translateY(-2px);
     }
@@ -272,8 +277,8 @@
       inset: 0;
       z-index: -3;
       background-image:
-        linear-gradient(rgba(0, 119, 255, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 119, 255, 0.045) 1px, transparent 1px);
+        linear-gradient(rgba(79, 70, 229, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 70, 229, 0.045) 1px, transparent 1px);
       background-size: 72px 72px;
       mask-image: radial-gradient(circle at 50% 34%, black 0, transparent 72%);
       content: "";
@@ -284,9 +289,9 @@
       inset: -25%;
       z-index: -4;
       background:
-        radial-gradient(circle at 18% 20%, rgba(0, 166, 255, 0.24), transparent 26%),
-        radial-gradient(circle at 76% 22%, rgba(59, 130, 246, 0.14), transparent 28%),
-        radial-gradient(circle at 58% 78%, rgba(125, 211, 252, 0.2), transparent 30%);
+        radial-gradient(circle at 18% 20%, rgba(124, 58, 237, 0.16), transparent 26%),
+        radial-gradient(circle at 76% 22%, rgba(79, 70, 229, 0.1), transparent 28%),
+        radial-gradient(circle at 58% 78%, rgba(139, 92, 246, 0.14), transparent 30%);
       animation: heroGradient 14s ease-in-out infinite alternate;
       content: "";
       filter: blur(14px);
@@ -436,11 +441,11 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: #ffffff;
-      box-shadow: 0 18px 44px rgba(0, 119, 255, 0.24);
+      box-shadow: 0 18px 44px rgba(79, 70, 229, 0.24);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 22px 54px rgba(0, 119, 255, 0.3);
+      box-shadow: 0 22px 54px rgba(79, 70, 229, 0.3);
       transform: translateY(-3px);
     }
 
@@ -451,7 +456,7 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(0, 119, 255, 0.08);
+      background: rgba(79, 70, 229, 0.08);
       box-shadow: var(--glow);
       transform: translateY(-3px);
     }
@@ -471,7 +476,7 @@
       inset: -1px;
       z-index: -1;
       border-radius: inherit;
-      background: linear-gradient(135deg, rgba(0, 119, 255, 0.22), transparent 38%, rgba(0, 166, 255, 0.16));
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.22), transparent 38%, rgba(124, 58, 237, 0.16));
       content: "";
       opacity: 0.55;
     }
@@ -878,6 +883,31 @@
       flex-wrap: wrap;
       gap: 8px;
       margin-top: auto;
+      margin-bottom: 24px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .project-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-3);
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(79, 70, 229, 0.08);
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .project-actions a:hover {
+      background: rgba(79, 70, 229, 0.15);
+      transform: translateY(-2px);
     }
 
     .tech-badge {
@@ -1058,8 +1088,8 @@
 
     .footer-social a {
       display: grid;
-      width: 38px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
       place-items: center;
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -1075,13 +1105,38 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 700ms ease, transform 700ms ease;
+      transform: translateY(32px) scale(0.97);
+      transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .reveal.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      padding: 12px 24px;
+      background: var(--text-strong);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1271,7 +1326,7 @@
         <li><a class="nav-link" href="#education">Education</a></li>
         <li><a class="nav-link" href="#certifications">Certs</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
-        <li><a class="nav-cta" href="mailto:junu089@gmail.com"><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Hire Me</a></li>
+        <li><a class="nav-cta" href="#" data-copy-email="junu089@gmail.com" aria-label="Copy Email"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Email</a></li>
       </ul>
     </nav>
   </header>
@@ -1281,7 +1336,7 @@
       <canvas class="hero-particles" data-particles aria-hidden="true"></canvas>
       <div class="hero-content container">
         <div class="hero-copy reveal">
-          <div class="availability"><span class="availability-dot" aria-hidden="true"></span> Open to freelance, startup, and product collaborations</div>
+
           <span class="hero-title-small">AI Engineer & Full-Stack Developer based in Kerala</span>
           <h1>I build <span class="gradient-text">AI-powered products</span> that are useful, polished, and production-ready.</h1>
           <p class="hero-bio">I help businesses launch intelligent websites, Flutter apps, automation systems, and full-stack platforms — from UI/UX and backend architecture to AI integration, deployment, and hosting.</p>
@@ -1516,7 +1571,7 @@
               <div class="timeline-top">
                 <div>
                   <h3>AI Engineer</h3>
-                  <div class="timeline-company">Artcl.in, Palakkad</div>
+                  <div class="timeline-company"><i class="fa-regular fa-building" aria-hidden="true"></i> Artcl.in, Palakkad</div>
                 </div>
                 <div class="timeline-date">07/2025 – Present</div>
               </div>
@@ -1536,7 +1591,7 @@
               <div class="timeline-top">
                 <div>
                   <h3>Python Full Stack Developer Intern</h3>
-                  <div class="timeline-company">Febno.co, Calicut</div>
+                  <div class="timeline-company"><i class="fa-regular fa-building" aria-hidden="true"></i> Febno.co, Calicut</div>
                 </div>
                 <div class="timeline-date">05/2025 – 07/2025</div>
               </div>
@@ -1572,6 +1627,10 @@
             <div class="tech-stack">
               <span class="tech-badge">Flutter</span><span class="tech-badge">Dart</span><span class="tech-badge">CodeIgniter</span><span class="tech-badge">REST API</span><span class="tech-badge">LLM</span>
             </div>
+            <div class="project-actions">
+              <a href="#" aria-label="View SayBill AI live demo"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>
+              <a href="https://github.com/junaid089" target="_blank" rel="noopener noreferrer" aria-label="View SayBill AI source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
+            </div>
           </article>
 
           <article class="project-card reveal">
@@ -1586,21 +1645,13 @@
             <div class="tech-stack">
               <span class="tech-badge">Flask</span><span class="tech-badge">SQLYOG</span><span class="tech-badge">Bootstrap</span>
             </div>
-          </article>
-
-          <article class="project-card reveal">
-            <span class="project-number">PROJECT 03</span>
-            <h3>Aimas Spices & Masalas</h3>
-            <p>Full-stack brand website designed and delivered from interface to hosting.</p>
-            <ul>
-              <li>Custom admin panel with JWT authentication</li>
-              <li>Mobile-first responsive UI for brand discovery</li>
-              <li>End-to-end delivery across frontend, backend, database, and hosting</li>
-            </ul>
-            <div class="tech-stack">
-              <span class="tech-badge">React.js</span><span class="tech-badge">Node.js</span><span class="tech-badge">Express.js</span><span class="tech-badge">MySQL</span>
+            <div class="project-actions">
+              <a href="#" aria-label="View ERMS live demo"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>
+              <a href="https://github.com/junaid089" target="_blank" rel="noopener noreferrer" aria-label="View ERMS source code"><i class="fa-brands fa-github" aria-hidden="true"></i> Source</a>
             </div>
           </article>
+
+
         </div>
       </div>
     </section>
@@ -1688,7 +1739,7 @@
             </div>
 
             <div class="contact-links">
-              <a class="contact-card" href="mailto:junu089@gmail.com" aria-label="Email Junaid">
+              <a class="contact-card" href="#" data-copy-email="junu089@gmail.com" aria-label="Copy Email Junaid">
                 <i class="fa-regular fa-envelope" aria-hidden="true"></i>
                 <div>
                   <span>Email</span>
@@ -1734,7 +1785,7 @@
     <div class="footer-content container">
       <p>© <span data-year></span> Junaid A S. AI, web, and mobile products built with care.</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="mailto:junu089@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+        <a href="#" data-copy-email="junu089@gmail.com" aria-label="Copy Email"><i class="fa-regular fa-copy" aria-hidden="true"></i></a>
         <a href="https://github.com/junaid089" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/junaid-as" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
       </div>
@@ -1813,6 +1864,7 @@
     const ctx = canvas.getContext('2d');
     let particles = [];
     let animationFrameId;
+    let isCanvasVisible = true;
 
     function setCanvasSize() {
       const ratio = window.devicePixelRatio || 1;
@@ -1834,6 +1886,7 @@
     }
 
     function drawParticles() {
+      if (!isCanvasVisible) return;
       ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
 
       particles.forEach((particle, index) => {
@@ -1845,7 +1898,7 @@
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 119, 255, ${particle.alpha})`;
+        ctx.fillStyle = `rgba(79, 70, 229, ${particle.alpha})`;
         ctx.fill();
 
         for (let nextIndex = index + 1; nextIndex < particles.length; nextIndex += 1) {
@@ -1858,7 +1911,7 @@
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(nextParticle.x, nextParticle.y);
-            ctx.strokeStyle = `rgba(0, 119, 255, ${0.11 * (1 - distance / 116)})`;
+            ctx.strokeStyle = `rgba(79, 70, 229, ${0.11 * (1 - distance / 116)})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -1873,11 +1926,42 @@
       cancelAnimationFrame(animationFrameId);
       setCanvasSize();
       createParticles();
-      drawParticles();
+      if (isCanvasVisible) drawParticles();
+    }
+
+    const heroSection = document.querySelector('#home');
+    if (heroSection) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        isCanvasVisible = entries[0].isIntersecting;
+        if (isCanvasVisible) {
+          cancelAnimationFrame(animationFrameId);
+          drawParticles();
+        } else {
+          cancelAnimationFrame(animationFrameId);
+        }
+      });
+      heroObserver.observe(heroSection);
     }
 
     window.addEventListener('resize', initParticles);
     initParticles();
+
+    // Copy Email Functionality
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = '<i class="fa-solid fa-check"></i> Email copied to clipboard!';
+    document.body.appendChild(toast);
+
+    document.querySelectorAll('[data-copy-email]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = btn.getAttribute('data-copy-email');
+        navigator.clipboard.writeText(email).then(() => {
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 3000);
+        });
+      });
+    });
   </script>
 </body>
 </html>
