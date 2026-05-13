@@ -1,0 +1,15 @@
+node_modules
+*.jpeg
+*.jpg
+*.heic
+*.png
+
+/.cache
+/build
+.env
+
+.wrangler
+.dev.vars
+
+public/draco
+storybook-static
