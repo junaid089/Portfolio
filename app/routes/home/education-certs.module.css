@@ -1,0 +1,230 @@
+.educationCerts {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space3XL) 0;
+  
+  @media (--mediaTablet) {
+    padding: var(--space4XL) var(--space2XL);
+    min-height: auto;
+  }
+
+  @media (--mediaMobile) {
+    padding: var(--space3XL) var(--spaceOuter);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--maxWidthL);
+  width: 100%;
+}
+
+.sectionGroup {
+  margin-bottom: var(--space4XL);
+}
+
+.header {
+  margin-bottom: var(--space3XL);
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity var(--durationXL) ease, transform var(--durationXL) ease;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.title {
+  margin-bottom: var(--spaceS);
+}
+
+.description {
+  max-width: 600px;
+  color: var(--textLight);
+}
+
+.eduGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space2XL);
+
+  @media (--mediaTablet) {
+    grid-template-columns: 100%;
+    gap: var(--spaceL);
+  }
+}
+
+.eduCard {
+  background: var(--backgroundLight);
+  padding: var(--space2XL);
+  border-radius: var(--borderRadiusLarge);
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity var(--durationL) ease, transform var(--durationL) ease;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.eduTitle {
+  margin-bottom: var(--spaceS);
+  color: var(--textTitle);
+}
+
+.eduInst {
+  color: var(--textLight);
+  margin-bottom: var(--spaceM);
+}
+
+.eduDate {
+  font-size: var(--fontSizeBodyS);
+  color: var(--primary);
+  font-weight: var(--fontWeightMedium);
+}
+
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spaceL);
+
+  @media (--mediaTablet) {
+    grid-template-columns: 100%;
+  }
+}
+
+.certCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spaceL);
+  background: var(--backgroundLight);
+  padding: var(--spaceL);
+  border-radius: var(--borderRadiusLarge);
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(var(--primaryRGB), 0.1), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(var(--primaryRGB), 0.15);
+    border-color: rgba(var(--primaryRGB), 0.3);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.certIcon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(var(--primaryRGB), 0.2), rgba(var(--primaryRGB), 0.05));
+  color: var(--primary);
+  font-size: var(--fontSizeBodyL);
+  font-weight: var(--fontWeightBold);
+  flex: 0 0 auto;
+  box-shadow: 0 4px 12px rgba(var(--primaryRGB), 0.1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  .certCard:hover & {
+    transform: scale(1.1) rotate(6deg);
+  }
+}
+
+.certInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  z-index: 1;
+}
+
+.certTitle {
+  font-size: var(--fontSizeBodyM);
+  font-weight: var(--fontWeightMedium);
+  color: var(--textTitle);
+  transition: color 0.3s ease;
+
+  .certCard:hover & {
+    color: var(--primary);
+  }
+}
+
+.certIssuer {
+  font-size: var(--fontSizeBodyS);
+  color: var(--textLight);
+}
+
+.certArrow {
+  position: relative;
+  color: var(--primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+
+  .certCard:hover & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.floatingPreview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+.floatingPreview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--background);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+  }
+}

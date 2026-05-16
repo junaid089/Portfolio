@@ -7,6 +7,7 @@ import { Image } from '~/components/image';
 import { Link } from '~/components/link';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
+import { List, ListItem } from '~/components/list';
 import { Transition } from '~/components/transition';
 import { Fragment, useState } from 'react';
 import { media } from '~/utils/style';
@@ -19,7 +20,30 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Junaid A S, an AI Engineer and Full-Stack Developer from Kerala, India. I work across the complete product lifecycle: planning, UI/UX design, frontend development, backend APIs, AI workflows, cloud deployment, and hosting. My focus is simple — build clean, scalable products that solve practical problems and are ready for real users.
+      I’m Junaid A S, an AI Engineer and Full-Stack Developer from Kerala, India. I work across the complete product lifecycle: planning, UI/UX design, frontend development, backend APIs, AI workflows, cloud deployment, and hosting.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      My core services include:
+    </Text>
+    <List className={styles.description} data-visible={visible}>
+      <ListItem>
+        <strong>AI-Powered Web & Mobile Apps:</strong> Integrating LLMs, Vision AI, and automation into real products.
+      </ListItem>
+      <ListItem>
+        <strong>Full-Stack Web Development:</strong> End-to-end website delivery using React, Node.js, Django, and REST APIs.
+      </ListItem>
+      <ListItem>
+        <strong>Mobile App Development:</strong> Cross-platform iOS and Android apps with polished UI using Flutter.
+      </ListItem>
+      <ListItem>
+        <strong>Cloud Deployment & Hosting:</strong> Scalable deployments on Firebase, AWS, Vercel, and Hostinger.
+      </ListItem>
+    </List>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      My technical toolkit includes Python, Dart, JavaScript/TypeScript, SQL, Flutter, Django, React, and Node.js. For AI and Machine Learning, I frequently work with OpenAI, Hugging Face, RAG pipelines, and Prompt Engineering.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      Currently, I work as an AI Engineer at Artcl.in, where I develop AI-powered software solutions focusing on automation and ML model implementation. Previously, I was a Python Full Stack Developer Intern at Febno.co, building and maintaining web apps using Django and PostgreSQL.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       In my spare time, I like to explore new AI/ML tools, and build intelligent automation workflows. I’m always down for hearing about new projects, so feel free to drop me a line.

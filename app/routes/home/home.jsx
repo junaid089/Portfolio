@@ -14,6 +14,10 @@ import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
 import { Profile } from './profile';
+import { Skills } from './skills';
+import { Experience } from './experience';
+import { EducationCerts } from './education-certs';
+import { ProjectsGrid } from './projects-grid';
 import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
@@ -53,9 +57,13 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const details = useRef();
+  const skills = useRef();
+  const experience = useRef();
+  const education = useRef();
+  const projects = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, details];
+    const sections = [intro, projectOne, projectTwo, details, skills, experience, education, projects];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -102,13 +110,13 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="SayBill AI"
-        description="AI-powered mobile POS for retail billing and inventory management."
-        buttonText="View project"
-        buttonLink="/projects/saybill"
+        title="Web Development"
+        description="End-to-end website delivery — design, development, and hosting. React, Node.js, Django, REST APIs."
+        buttonText="More details"
+        buttonLink="/#details"
         model={{
           type: 'laptop',
-          alt: 'SayBill AI',
+          alt: 'Web Development',
           textures: [
             {
               srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
@@ -123,13 +131,13 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="ERMS"
-        description="Educational Resource Management System for performance tracking and automated reporting."
-        buttonText="View project"
-        buttonLink="/projects/erms"
+        title="Mobile App Development"
+        description="Cross-platform iOS and Android apps. AI-integrated mobile experiences with polished UI."
+        buttonText="More details"
+        buttonLink="/#details"
         model={{
           type: 'phone',
-          alt: 'ERMS Screen',
+          alt: 'Mobile App Development',
           textures: [
             {
               srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
@@ -146,6 +154,26 @@ export const Home = () => {
         sectionRef={details}
         visible={visibleSections.includes(details.current)}
         id="details"
+      />
+      <Skills
+        sectionRef={skills}
+        visible={visibleSections.includes(skills.current)}
+        id="skills"
+      />
+      <Experience
+        sectionRef={experience}
+        visible={visibleSections.includes(experience.current)}
+        id="experience"
+      />
+      <EducationCerts
+        sectionRef={education}
+        visible={visibleSections.includes(education.current)}
+        id="education"
+      />
+      <ProjectsGrid
+        sectionRef={projects}
+        visible={visibleSections.includes(projects.current)}
+        id="projects"
       />
       <Footer />
     </div>
