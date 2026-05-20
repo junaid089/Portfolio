@@ -1,25 +1,6 @@
 import volkiharBackgroundLarge from '~/assets/volkihar-background-large.jpg';
 import volkiharBackgroundPlaceholder from '~/assets/volkihar-background-placeholder.jpg';
 import volkiharBackground from '~/assets/volkihar-background.jpg';
-import volkiharBannerLarge from '~/assets/volkihar-banner-large.jpg';
-import volkiharBannerPlaceholder from '~/assets/volkihar-banner-placeholder.jpg';
-import volkiharBanner from '~/assets/volkihar-banner.jpg';
-import volkiharBookLarge from '~/assets/volkihar-book-large.png';
-import volkiharBookPlaceholder from '~/assets/volkihar-book-placeholder.png';
-import volkiharBook from '~/assets/volkihar-book.png';
-import volkiharEnderalLarge from '~/assets/volkihar-enderal-large.jpg';
-import volkiharEnderalLogoLarge from '~/assets/volkihar-enderal-logo-large.png';
-import volkiharEnderalLogoPlaceholder from '~/assets/volkihar-enderal-logo-placeholder.png';
-import volkiharEnderalLogo from '~/assets/volkihar-enderal-logo.png';
-import volkiharEnderalPlaceholder from '~/assets/volkihar-enderal-placeholder.jpg';
-import volkiharEnderal from '~/assets/volkihar-enderal.jpg';
-import volkiharSlide1Large from '~/assets/volkihar-slide-1-large.jpg';
-import volkiharSlide1 from '~/assets/volkihar-slide-1.jpg';
-import volkiharSlide2Large from '~/assets/volkihar-slide-2-large.jpg';
-import volkiharSlide2 from '~/assets/volkihar-slide-2.jpg';
-import volkiharSlide3Large from '~/assets/volkihar-slide-3-large.jpg';
-import volkiharSlide3 from '~/assets/volkihar-slide-3.jpg';
-import volkiharSlidePlaceholder from '~/assets/volkihar-slide-placeholder.jpg';
 import { Button } from '~/components/button';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
@@ -35,22 +16,15 @@ import {
   ProjectSectionText,
   ProjectTextRow,
 } from '~/layouts/project';
-import { Fragment, Suspense, lazy } from 'react';
+import { Fragment } from 'react';
 import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
-import { VolkiharLogo } from './volkihar-logo';
 import styles from './erms.module.css';
-
-const Carousel = lazy(() =>
-  import('~/components/carousel').then(module => ({ default: module.Carousel }))
-);
-
-const Armor = lazy(() => import('./armor').then(module => ({ default: module.Armor })));
 
 const title = 'ERMS';
 const description =
-  'Educational Resource Management System for performance tracking and automated reporting.';
-const roles = ['Python', 'Flask', 'Bootstrap'];
+  'Educational Resource Management System for student performance tracking and automated reporting.';
+const roles = ['Full-Stack Development', 'Database Schema Design', 'System Architecture'];
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
@@ -63,12 +37,12 @@ export function ERMS() {
         dangerouslySetInnerHTML={{
           __html: `
             [data-theme='dark'] {
-              --primary: oklch(87.71% 0.084 85.29);
-              --accent: oklch(87.71% 0.084 85.29);
+              --primary: oklch(80% 0.14 280);
+              --accent: oklch(80% 0.14 280);
             }
             [data-theme='light'] {
-              --primary: oklch(52.25% 0.121 81.53);
-              --accent: oklch(52.25% 0.121 81.53);
+              --primary: oklch(50% 0.18 280);
+              --accent: oklch(50% 0.18 280);
             }
           `,
         }}
@@ -79,147 +53,92 @@ export function ERMS() {
           width={1280}
           height={720}
           placeholder={volkiharBackgroundPlaceholder}
-          opacity={0.5}
+          opacity={0.3}
         />
         <ProjectHeader
           title={title}
           description={description}
-          linkLabel="Get the mod"
-          url="https://www.nexusmods.com/skyrimspecialedition/mods/4806/"
+          linkLabel="View Source"
+          url="https://github.com/junaid089"
           roles={roles}
         />
-        <ProjectSection>
+        <ProjectSection padding="top">
           <ProjectSectionContent>
             <ProjectImage
-              srcSet={`${volkiharBanner} 800w, ${volkiharBannerLarge} 1100w`}
-              width={800}
-              height={436}
-              placeholder={volkiharBannerPlaceholder}
-              alt="A dark elf wearing the Volkihar Knight armor with the logo overlaid on the image."
-              sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
+              srcSet="/static/erms_dashboard_mockup.png 1280w, /static/erms_dashboard_mockup.png 2560w"
+              width={1280}
+              height={800}
+              placeholder="/static/erms_dashboard_mockup.png"
+              alt="ERMS modern administrative analytics panel showing student performance analytics, grade distributions, and resource allocations."
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
           </ProjectSectionContent>
         </ProjectSection>
+
         <ProjectSection>
-          <ProjectSectionContent>
-            <Image
-              srcSet={`${volkiharBook} 490w, ${volkiharBookLarge} 960w`}
-              width={480}
-              height={300}
-              placeholder={volkiharBookPlaceholder}
-              alt="A book containing a sketch depicting the logo and armor"
-              sizes={`(max-width: ${media.mobile}px) 90vw, (max-width: ${media.tablet}px) 80vw, 70vw`}
-            />
-          </ProjectSectionContent>
+          <ProjectTextRow>
+            <ProjectSectionHeading>The Problem</ProjectSectionHeading>
+            <ProjectSectionText>
+              Educational institutions and training academies often struggle with fragmented 
+              spreadsheets, disorganized class files, and manual grading reports. Overwhelming 
+              administrative tasks can lead to high error rates in report generation, slow response 
+              times, and lack of real-time insights for teachers, coordinators, and directors 
+              trying to optimize curriculum delivery and track resource usage.
+            </ProjectSectionText>
+          </ProjectTextRow>
         </ProjectSection>
+
         <ProjectSection>
           <ProjectSectionColumns>
-            <div className={styles.armor}>
-              <Suspense>
-                <Armor alt="3D model of the Volkihar Knight armor" />
-              </Suspense>
-            </div>
             <div className={styles.textSection}>
-              <ProjectSectionHeading>Armor design</ProjectSectionHeading>
+              <ProjectSectionHeading>System Architecture</ProjectSectionHeading>
               <ProjectSectionText>
-                As a player I noticed there weren’t any heavy armor options for the
-                Volkihar faction. This kinda sucks when you’ve specialised in heavy armor
-                and decide to join the faction and discover they all wear light armor.
+                Junaid engineered the Educational Resource Management System (ERMS) as a high-fidelity 
+                Flask platform that interfaces with a robust relational database. Using SQLYOG, Junaid 
+                designed optimized database schemas that manage thousands of student profiles, 
+                course tracks, and exam metrics cleanly.
               </ProjectSectionText>
               <ProjectSectionText>
-                My solution was to create a mod that combines meshes from the Volkihar
-                faction armor with heavy plate armor. The mod builds upon textures and
-                meshes from the base game, so it unifies with Skyrim’s overall aesthetic.
-                I combined and modified the meshes in 3DS Max. To establish a cohesive
-                design across the set, I edited existing textures, and designed custom
-                textures in Photoshop.
+                The frontend utilizes Bootstrap, structured to prioritize fast-loading page speeds, 
+                high accessibility, and responsive, fluid table listings. Teachers can record 
+                attendance, key in exam grades, and update course contents through clean, 
+                non-intrusive workflows.
+              </ProjectSectionText>
+            </div>
+            <div className={styles.textSection}>
+              <ProjectSectionHeading>Automated Reporting Engine</ProjectSectionHeading>
+              <ProjectSectionText>
+                A core feature of the ERMS is its fully automated reporting pipeline. Instead of 
+                generating report cards and grade matrices manually, Junaid's system compiles data 
+                on-demand, calculating class averages, grade distributions, and student percentiles 
+                instantly. 
+              </ProjectSectionText>
+              <ProjectSectionText>
+                Administrative personnel can export beautifully formatted, print-ready reports 
+                with a single click, saving hours of labor during active grading cycles.
               </ProjectSectionText>
             </div>
           </ProjectSectionColumns>
         </ProjectSection>
+
         <ProjectSection>
-          <ProjectSectionContent>
-            <div className={styles.logoContainer}>
-              <VolkiharLogo
-                role="img"
-                aria-label="The Volkihar Knight logo, a monogram using the letters 'V' and 'K"
-              />
-            </div>
-            <ProjectTextRow center noMargin>
-              <ProjectSectionHeading>Identity design</ProjectSectionHeading>
-              <ProjectSectionText>
-                The monogram uses custom designed typography to get the right balance of
-                weight and angularity. I combined this with Trajan for the text, which is
-                also used for Skyrim’s game title wordmark.
-              </ProjectSectionText>
-            </ProjectTextRow>
-          </ProjectSectionContent>
-        </ProjectSection>
-        <ProjectSection>
-          <ProjectSectionContent>
-            <Suspense>
-              <Carousel
-                placeholder={volkiharSlidePlaceholder}
-                images={[
-                  {
-                    srcSet: `${volkiharSlide1} 960w, ${volkiharSlide1Large} 1920w`,
-                    sizes: `(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 100vw, 1096px`,
-                    alt: 'A female character wearing the black coloured armor set.',
-                  },
-                  {
-                    srcSet: `${volkiharSlide2} 960w, ${volkiharSlide2Large} 1920w`,
-                    sizes: `(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 100vw, 1096px`,
-                    alt: 'A close up of the custom gauntlets design.',
-                  },
-                  {
-                    srcSet: `${volkiharSlide3} 960w, ${volkiharSlide3Large} 1920w`,
-                    sizes: `(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 100vw, 1096px`,
-                    alt: 'A female character wielding a sword and wearing the red coloured armor.',
-                  },
-                ]}
-                width={1920}
-                height={1080}
-              />
-            </Suspense>
-          </ProjectSectionContent>
-        </ProjectSection>
-        <ProjectSection
-          backgroundElement={
-            <Image
-              srcSet={`${volkiharEnderal} 1280w, ${volkiharEnderalLarge} 1920w`}
-              width={1280}
-              height={720}
-              placeholder={volkiharEnderalPlaceholder}
-              alt="A promotional image from Enderal showing several characters in the game overlooking a distant city."
-              sizes={`100vw`}
-            />
-          }
-        >
           <ProjectSectionContent>
             <ProjectTextRow center centerMobile noMargin>
-              <Image
-                srcSet={`${volkiharEnderalLogo} 180w, ${volkiharEnderalLogoLarge} 360w`}
-                width={180}
-                height={200}
-                placeholder={volkiharEnderalLogoPlaceholder}
-                alt="The Enderal game logo"
-                sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 100vw, 220px`}
-                style={{ maxWidth: 220, width: '100%', marginBottom: 30 }}
-              />
-              <ProjectSectionHeading>Featured in Enderal</ProjectSectionHeading>
+              <ProjectSectionHeading>Engineering Outcomes</ProjectSectionHeading>
               <ProjectSectionText>
-                I was super stoked to have my work featured in the major standalone mod
-                Enderal, which won best fan creation at the game awards in 2016. Within
-                the game my armor design can be found being used for the Wandering Mage
-                armor set.
+                Ultimately, Junaid's ERMS platform successfully digitized school workflows, 
+                eliminating spreadsheet redundancy, reducing report-card generation times from days to 
+                seconds, and providing teachers with instant visual performance charts. 
+                The platform highlights Junaid's core ability to engineer scalable backend systems, 
+                optimized database schemas, and clean, enterprise-focused web portals.
               </ProjectSectionText>
               <Button
                 secondary
                 iconHoverShift
                 icon="chevron-right"
-                href="https://store.steampowered.com/app/933480/Enderal_Forgotten_Stories/"
+                href="https://github.com/junaid089"
               >
-                View on Steam
+                View on GitHub
               </Button>
             </ProjectTextRow>
           </ProjectSectionContent>
@@ -229,3 +148,4 @@ export function ERMS() {
     </Fragment>
   );
 }
+

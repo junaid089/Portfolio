@@ -6,7 +6,7 @@ export async function loader() {
 }
 
 export const meta = () => {
-  return [{ title: '404 | Redacted' }];
+  return [{ title: '404 | Junaid A S' }];
 };
 
 export function ErrorBoundary() {

@@ -115,6 +115,30 @@ export default function App() {
         <Meta />
         <Links />
         <link rel="canonical" href={canonicalUrl} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Junaid A S",
+              "jobTitle": "AI Engineer & Full-Stack Developer",
+              "url": "https://junaidas.com",
+              "email": "junu089@gmail.com",
+              "telephone": "+917034092876",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Palakkad",
+                "addressRegion": "Kerala",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://github.com/junaid089",
+                "https://www.linkedin.com/in/junaid-as"
+              ]
+            })
+          }}
+        />
       </head>
       <body data-theme={theme}>
         <ThemeProvider theme={theme} toggleTheme={toggleTheme}>

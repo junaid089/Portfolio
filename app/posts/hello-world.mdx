@@ -1,0 +1,129 @@
+import { Post } from '~/layouts/post';
+import { MDXProvider } from '@mdx-js/react';
+import { postMarkdown } from '~/layouts/post';
+
+export const meta = () => {
+  return [{ 
+    title: "Voice-First POS with Flutter & LLMs | Junaid A S",
+    description: "Developing SayBill AI: How a cross-platform Flutter application integrates with large language models to provide instant, voice-first retail billing."
+  }];
+};
+
+export const title = "Voice-First POS with Flutter & LLMs";
+export const date = "2026-05-18";
+export const banner = "/static/saybill_dashboard_mockup.png";
+export const timecode = "08:00";
+
+<MDXProvider components={postMarkdown}>
+  <Post title={title} date={date} banner={banner} timecode={timecode}>
+
+# Engineering SayBill AI: The Voice-First Billing Revolution
+
+Traditional Point of Sale (POS) systems are notoriously rigid. Cashiers spend hours tap-selecting items, scrolling through long catalogs, and typing quantities into legacy UIs. In high-velocity retail environments, these friction points result in long queues and lost revenue.
+
+SayBill AI was engineered to disrupt this paradigm by introducing a **voice-first, multi-modal POS billing workflow** built with Flutter, Dart, and Large Language Models (LLMs). Rather than tapping fifty buttons, a cashier can simply speak: 
+
+> "Add three cartons of low-fat milk, two sourdough bread loaves, and one unsalted butter block."
+
+Within milliseconds, the unstructured speech is processed, parsed into a structured JSON transaction payload, and displayed on the cashier's active bill screen. Here is how it works under the hood.
+
+---
+
+## 1. System Architecture Overview
+
+The system operates as a distributed multi-agent pipeline, balancing processing between local mobile devices and low-latency cloud endpoints:
+
+```
+[Cashier Speech] 
+      │
+      ▼
+[On-Device Voice Stream]
+      │  (Speech-to-Text Pipeline)
+      ▼
+[Raw Unstructured Text]
+      │  (Low-Latency API Call)
+      ▼
+[Llama-3 / Custom LLM Parser]
+      │  (Structured JSON Generation)
+      ▼
+[Flutter POS Cart Controller] ──► [Instant UI Update]
+```
+
+By decoupling speech capture from schema serialization, Junaid achieved a highly responsive system where the average round-trip latency from finished sentence to UI render is **under 420ms**.
+
+---
+
+## 2. Low-Latency Voice Processing in Dart
+
+In Flutter, capturing audio streams and passing them to raw audio engines without introducing UI stuttering requires careful isolation. The application leverages Dart Isolates (background threads) to chunk and send raw audio data over WebSockets to our speech-to-text (STT) pipeline:
+
+```dart
+// Dart isolate handler for background voice streaming
+void streamAudioToBackend(SendPort mainSendPort) async {
+  final recordStream = Record();
+  final socket = await WebSocket.connect('wss://api.saybill.ai/v1/stream');
+
+  recordStream.startStream().listen((audioChunk) {
+    socket.add(audioChunk);
+  });
+
+  socket.listen((response) {
+    // Pass raw transcription segments back to the main UI thread
+    mainSendPort.send(response);
+  });
+}
+```
+
+This background pipeline ensures the main UI thread remains fluid at a locked 120Hz refresh rate, allowing smooth transitions even while deep network processing is occurring in the background.
+
+---
+
+## 3. Instruction-Tuned LLM Schema Extraction
+
+Once raw text like *"add three milks and put a 10% discount on the whole bill"* is transcribed, standard NLP matchers fall short. Slang, accents, brand variations, and multi-sentence context require semantic understanding. 
+
+Junaid engineered custom system prompts and few-shot examples for an instruction-tuned LLM. The system enforces strict adherence to a JSON schema:
+
+```json
+{
+  "action": "ADD_ITEMS",
+  "items": [
+    {
+      "name": "milk",
+      "quantity": 3,
+      "brand_hint": null
+    }
+  ],
+  "discounts": [
+    {
+      "scope": "GLOBAL",
+      "type": "PERCENTAGE",
+      "value": 10
+    }
+  ]
+}
+```
+
+The server-side endpoint validates the generated JSON against our product database using fuzzy-matching algorithms, ensuring that "milks" matches "Amul Low-Fat Milk 1L" or "Nestle Whole Milk" based on customer purchase history and active inventory.
+
+---
+
+## 4. Offline Fallback and Robustness
+
+For retail POS systems, connectivity failures cannot mean operations come to a halt. SayBill AI implements a dual-mode strategy:
+1. **Online Mode**: Deep LLM extraction for conversational, unstructured queries (e.g. *"Actually, scratch that last milk and double the bread"*).
+2. **Offline Mode**: A lightweight, on-device regex and keyword-spotting parser. While less flexible, it allows the cashier to use simple, formatted commands (e.g., *"3 milk, 2 bread"*) to process orders locally when internet access is lost.
+
+---
+
+## 5. Visual Outcomes & Impact
+
+By replacing hundreds of manual clicks with single-sentence inputs, SayBill AI:
+- **Reduces checkout times by 65%**.
+- **Decreases training times** for new cashiers from weeks to minutes.
+- **Minimizes physical strain** for store staff through hands-free controls.
+
+By marrying elegant Flutter UI architectures with cutting-edge conversational AI pipelines, SayBill AI represents the future of physical retail productivity.
+
+  </Post>
+</MDXProvider>
