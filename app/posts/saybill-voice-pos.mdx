@@ -1,12 +1,15 @@
 import { Post } from '~/layouts/post';
 import { MDXProvider } from '@mdx-js/react';
 import { postMarkdown } from '~/layouts/post';
+import { baseMeta } from '~/utils/meta';
 
 export const meta = () => {
-  return [{ 
-    title: "Voice-First POS with Flutter & LLMs | Junaid A S",
-    description: "Developing SayBill AI: How a cross-platform Flutter application integrates with large language models to provide instant, voice-first retail billing."
-  }];
+  return baseMeta({
+    title: "Voice-First POS with Flutter & LLMs",
+    description: "Developing SayBill AI: How a cross-platform Flutter application integrates with large language models to provide instant, voice-first retail billing.",
+    prefix: "Articles",
+    ogImage: "https://junaidas.com/static/saybill_dashboard_mockup.png"
+  });
 };
 
 export const title = "Voice-First POS with Flutter & LLMs";

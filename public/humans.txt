@@ -10,16 +10,16 @@ _______________________________________________________________________________
 
 DESIGNER | デザイナー
 
-Hamish Williams
-Hand crafted design & web development
+Junaid A S
+AI Engineering & Full-Stack Development
 
 Design tools:
 Figma
-Photoshop
-Blender
+VS Code
+Git
 
-twitter.com/hamishmw
-github.com/hamishmw
+linkedin.com/in/junaid-as
+github.com/junaid089
 
 _______________________________________________________________________________
 

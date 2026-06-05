@@ -24,7 +24,7 @@ const articles = [
     date: "2026-05-19",
     banner: "/static/erms_dashboard_mockup.png",
     timecode: "6 mins read",
-    slug: "modern-styling-in-react"
+    slug: "erms-database-architecture"
   },
   {
     title: "Voice-First POS with Flutter & LLMs",
@@ -32,7 +32,7 @@ const articles = [
     date: "2026-05-18",
     banner: "/static/saybill_dashboard_mockup.png",
     timecode: "8 mins read",
-    slug: "hello-world"
+    slug: "saybill-voice-pos"
   }
 ];
 
@@ -63,7 +63,7 @@ export function ArticlesIndex() {
                   <div className={styles.cardBanner}>
                     <img 
                       src={article.banner} 
-                      alt="" 
+                      alt={article.title} 
                       loading="lazy" 
                     />
                   </div>
