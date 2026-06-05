@@ -45,8 +45,21 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'Designer + Developer',
-    description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
+    title: 'AI Engineer & Full-Stack Developer',
+    description: `Portfolio of ${config.name} (Junaid AS) — an AI Engineer and Full-Stack Developer specializing in web & mobile apps, LLM integrations, and custom database pipelines.`,
+    keywords: [
+      'Junaid A S',
+      'Junaid AS',
+      'Junaid',
+      'AI Engineer',
+      'Full-Stack Developer',
+      'Software Engineer',
+      'Portfolio',
+      'React Developer',
+      'Flutter Developer',
+      'Palakkad',
+      'Kerala'
+    ]
   });
 };
 

@@ -8,12 +8,14 @@ export function baseMeta({
   description,
   prefix = name,
   ogImage = defaultOgImage,
+  keywords = ['Junaid A S', 'Junaid AS', 'AI Engineer', 'Full-Stack Developer', 'Software Engineer'],
 }) {
   const titleText = [prefix, title].filter(Boolean).join(' | ');
 
   return [
     { title: titleText },
     { name: 'description', content: description },
+    { name: 'keywords', content: Array.isArray(keywords) ? keywords.join(', ') : keywords },
     { name: 'author', content: name },
     { property: 'og:image', content: ogImage },
     { property: 'og:image:alt', content: 'Banner for the site' },

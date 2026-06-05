@@ -122,6 +122,8 @@ export default function App() {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Junaid A S",
+              "alternateName": "Junaid AS",
+              "description": "AI Engineer and Full-Stack Developer specializing in web & mobile applications, LLM integration, and database systems.",
               "jobTitle": "AI Engineer & Full-Stack Developer",
               "url": "https://junaidas.com",
               "email": "junu089@gmail.com",
@@ -135,6 +137,14 @@ export default function App() {
               "sameAs": [
                 "https://github.com/junaid089",
                 "https://www.linkedin.com/in/junaid-as"
+              ],
+              "knowsAbout": [
+                "Artificial Intelligence",
+                "Software Engineering",
+                "Flutter",
+                "React",
+                "Flask",
+                "Database Optimization"
               ]
             })
           }}
