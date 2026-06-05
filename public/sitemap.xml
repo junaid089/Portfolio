@@ -1,36 +1,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://junaidas.com/</loc>
+    <loc>https://junaidas.in/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://junaidas.com/contact</loc>
+    <loc>https://junaidas.in/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://junaidas.com/projects/saybill</loc>
+    <loc>https://junaidas.in/projects/saybill</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://junaidas.com/projects/erms</loc>
+    <loc>https://junaidas.in/projects/erms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://junaidas.com/articles</loc>
+    <loc>https://junaidas.in/articles</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://junaidas.com/articles/saybill-voice-pos</loc>
+    <loc>https://junaidas.in/articles/saybill-voice-pos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://junaidas.com/articles/erms-database-architecture</loc>
+    <loc>https://junaidas.in/articles/erms-database-architecture</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

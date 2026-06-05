@@ -125,7 +125,7 @@ export default function App() {
               "alternateName": "Junaid AS",
               "description": "AI Engineer and Full-Stack Developer specializing in web & mobile applications, LLM integration, and database systems.",
               "jobTitle": "AI Engineer & Full-Stack Developer",
-              "url": "https://junaidas.com",
+              "url": "https://junaidas.in",
               "email": "junu089@gmail.com",
               "telephone": "+917034092876",
               "address": {

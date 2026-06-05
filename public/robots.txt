@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://junaidas.com/sitemap.xml
+Sitemap: https://junaidas.in/sitemap.xml
