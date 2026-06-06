@@ -1,0 +1,16 @@
+# Junaid As (Junaid A S)
+
+> AI Engineer & Full-Stack Developer specializing in web & mobile apps, LLM integrations, and custom database pipelines.
+
+## Main Navigation
+- [Home Page](https://junaidas.in/): Core portfolio, skills, experience, and contact form.
+- [Articles](https://junaidas.in/articles): Technical writeups on database optimization, AI pos systems, and full-stack architecture.
+- [Contact Page](https://junaidas.in/contact): Direct form interface to connect with Junaid.
+
+## Selected Work
+- [SayBill AI](https://junaidas.in/projects/saybill): An AI-powered voice billing and retail POS ecosystem built with Flutter, Dart, CodeIgniter, and LLMs. It features custom natural language processing (NLP) cart inputs and a mobile barcode scanner.
+- [ERMS](https://junaidas.in/projects/erms): Educational Resource Management System for performance tracking and automated reporting. Built with Flask, SQLYOG, Bootstrap, and custom composite relational database indexing.
+
+## Technical Writing & Guides
+- [Scale & Analytics: Architectural Design of ERMS](https://junaidas.in/articles/erms-database-architecture): Deep dive into Flask connection pooling, SQLAlchemy connection pool cycling, MySQL compound indexing, and database analytic window functions.
+- [Voice-First POS with Flutter & LLMs](https://junaidas.in/articles/saybill-voice-pos): Details on background audio isolates in Dart, WebSocket streaming pipelines, and instruction-tuned LLM JSON schema extraction.
