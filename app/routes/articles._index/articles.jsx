@@ -14,7 +14,20 @@ const title = 'Articles';
 const description = 'Technical articles, research notes, and architectural write-ups by Junaid A S covering AI engineering, full-stack development, and database systems.';
 
 export const meta = () => {
-  return baseMeta({ title, description });
+  return baseMeta({
+    title: 'Technical Articles & Research',
+    description: 'Technical articles, research notes, and architectural write-ups by Junaid A S covering AI engineering, LLM integration, Flutter, and database systems.',
+    prefix: 'Articles',
+    canonicalUrl: 'https://junaidas.in/articles',
+    keywords: [
+      'Junaid A S Articles',
+      'AI Engineering Guides',
+      'Flutter Voice POS',
+      'Flask Database Architecture',
+      'LLM JSON Schema',
+      'Junaid AS Technical Blog'
+    ]
+  });
 };
 
 const articles = [
@@ -36,9 +49,27 @@ const articles = [
   }
 ];
 
+const articlesSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Technical Articles by Junaid A S",
+  "description": "Technical writeups and architecture deep dives on AI, mobile development, and databases.",
+  "itemListElement": articles.map((art, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "url": `https://junaidas.in/articles/${art.slug}`,
+    "name": art.title,
+    "description": art.abstract
+  }))
+};
+
 export function ArticlesIndex() {
   return (
     <Fragment>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articlesSchema) }}
+      />
       <section className={styles.articles}>
         <div className={styles.container}>
           <header className={styles.header}>

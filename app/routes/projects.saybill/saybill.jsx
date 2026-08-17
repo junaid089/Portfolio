@@ -32,7 +32,54 @@ const roles = [
 ];
 
 export const meta = () => {
-  return baseMeta({ title, description, prefix: 'Projects' });
+  return baseMeta({
+    title: 'SayBill AI — Voice-First Point of Sale Ecosystem',
+    description: 'An AI-powered voice billing and retail POS ecosystem built with Flutter, Dart, CodeIgniter, and LLMs by Junaid.',
+    prefix: 'Projects',
+    ogImage: '/static/saybill_scanner_mockup.png',
+    canonicalUrl: 'https://junaidas.in/projects/saybill',
+    keywords: [
+      'SayBill AI',
+      'Voice POS',
+      'AI Billing App',
+      'Flutter Point of Sale',
+      'Junaid A S',
+      'Junaid',
+      'Dart Audio Isolates',
+      'Retail POS LLM'
+    ]
+  });
+};
+
+const saybillSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SayBill AI",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "BusinessApplication",
+  "description": "An AI-powered voice billing and retail POS ecosystem built with Flutter, Dart isolates, and LLMs.",
+  "author": {
+    "@type": "Person",
+    "name": "Junaid A S",
+    "url": "https://junaidas.in"
+  },
+  "creator": {
+    "@type": "Person",
+    "name": "Junaid A S",
+    "url": "https://junaidas.in"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Real-time voice-driven order transcription",
+    "Sub-420ms voice-to-cart latency with LLM JSON schema extraction",
+    "Camera Vision barcode scanner",
+    "Automated WhatsApp invoice delivery",
+    "Bluetooth thermal receipt printing"
+  ]
 };
 
 export const SayBill = () => {
@@ -46,6 +93,10 @@ export const SayBill = () => {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(saybillSchema) }}
+      />
       <ProjectContainer>
         <ProjectBackground
           opacity={isDark ? 0.5 : 0.8}

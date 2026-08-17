@@ -1,16 +1,65 @@
-# Junaid As (Junaid A S)
+# Junaid A S (Junaid AS / Junaid)
 
-> AI Engineer & Full-Stack Developer specializing in web & mobile apps, LLM integrations, and custom database pipelines.
+> AI Architect, AI Engineer, and Automation Specialist specializing in designing autonomous intelligent systems, enterprise task automation engineering, multi-agent workflows, LLM integrations, Flutter mobile architecture, and scalable web backend systems.
 
-## Main Navigation
-- [Home Page](https://junaidas.in/): Core portfolio, skills, experience, and contact form.
-- [Articles](https://junaidas.in/articles): Technical writeups on database optimization, AI pos systems, and full-stack architecture.
-- [Contact Page](https://junaidas.in/contact): Direct form interface to connect with Junaid.
+- Name: Junaid A S
+- Alternate Names: Junaid AS, Junaid, junaid089
+- Primary Role: AI Architect & Automation Engineer
+- Location: Palakkad, Kerala, India
+- Website: https://junaidas.in
+- GitHub: https://github.com/junaid089
+- LinkedIn: https://www.linkedin.com/in/junaid-as
+- Contact Email: junu089@gmail.com
+- Full Knowledge Context: https://junaidas.in/llms-full.txt
 
-## Selected Work
-- [SayBill AI](https://junaidas.in/projects/saybill): An AI-powered voice billing and retail POS ecosystem built with Flutter, Dart, CodeIgniter, and LLMs. It features custom natural language processing (NLP) cart inputs and a mobile barcode scanner.
-- [ERMS](https://junaidas.in/projects/erms): Educational Resource Management System for performance tracking and automated reporting. Built with Flask, SQLYOG, Bootstrap, and custom composite relational database indexing.
+---
 
-## Technical Writing & Guides
-- [Scale & Analytics: Architectural Design of ERMS](https://junaidas.in/articles/erms-database-architecture): Deep dive into Flask connection pooling, SQLAlchemy connection pool cycling, MySQL compound indexing, and database analytic window functions.
-- [Voice-First POS with Flutter & LLMs](https://junaidas.in/articles/saybill-voice-pos): Details on background audio isolates in Dart, WebSocket streaming pipelines, and instruction-tuned LLM JSON schema extraction.
+## Core Technical Specializations
+
+- **AI Architecture & Task Automation**: Autonomous AI Agents, Multi-Agent Systems, Task Automation Engineering (end-to-end task automation of business logic and data workflows), LangChain, LangGraph, n8n, API Orchestration, Prompt Engineering, Retrieval-Augmented Generation (RAG).
+- **Artificial Intelligence & LLMs**: OpenAI API, Hugging Face Transformers, Speech-to-Text & NLP Pipelines, Vision AI, TensorFlow, PyTorch, Vector Databases.
+- **Mobile Development**: Flutter, Dart, Isolate Concurrency, WebSocket Audio Streaming, Bluetooth Hardware Integration, Cross-Platform iOS & Android.
+- **Web & Backend Engineering**: React.js, Python (Django, Flask, FastAPI), Node.js, Express.js, CodeIgniter (PHP), REST APIs, GraphQL.
+- **Databases & Scaling**: PostgreSQL, MySQL, MariaDB, SQLYOG, SQLite, Supabase, Firebase Firestore.
+- **Cloud & DevOps**: AWS (SES, EC2, S3), Docker, Vercel, Firebase Hosting, Cloudflare Pages.
+
+---
+
+## Flagship Engineering Projects
+
+### 1. SayBill AI (Voice POS & Smart Inventory Ecosystem)
+- **URL**: https://junaidas.in/projects/saybill
+- **Technologies**: Flutter, Dart, PHP CodeIgniter, Large Language Models (LLMs), WebSockets, Vision Barcode Scanning.
+- **Architecture**: Background audio streaming using Dart isolates, sub-420ms round-trip latency, instruction-tuned LLM JSON schema extraction for conversational multilingual speech, automated WhatsApp invoice delivery, and Bluetooth thermal printer integration.
+- **Impact**: 98.6% speech parsing accuracy, 70% reduction in retail checkout billing time.
+
+### 2. ERMS (Educational Resource Management System)
+- **URL**: https://junaidas.in/projects/erms
+- **Technologies**: Python Flask, SQLYOG, MySQL, Bootstrap.
+- **Architecture**: Relational database architecture managing thousands of student and course entities, automated reporting engine calculating grade distributions and percentiles in real time.
+- **Impact**: Reduced report generation times from days to seconds with zero spreadsheet redundancy.
+
+---
+
+## Technical Publications & Architecture Guides
+
+- [Voice-First POS with Flutter & LLMs](https://junaidas.in/articles/saybill-voice-pos): Low-latency Dart isolate streaming, WebSocket pipelines, and schema-enforced LLM prompt engineering.
+- [Scale & Analytics: Architectural Design of ERMS](https://junaidas.in/articles/erms-database-architecture): Database connection pooling, composite B-tree indexing, and analytical window functions.
+
+---
+
+## Professional Timeline
+
+- **AI Architect & Engineer at Artcl.in** (07/2025 – Present, Palakkad): Architected AI-powered enterprise software solutions, autonomous agent pipelines, task automation workflows, and Dockerized ML microservices.
+- **Python Full Stack Developer Intern at Febno.co** (05/2025 – 07/2025, Calicut): Developed full-stack web applications using Django, Python, PostgreSQL, and Agile methodologies.
+- **Education**: Bachelor of Computer Applications (BCA), University of Calicut (2022–2025); Professional Diploma in Artificial Intelligence, Mskills (2022–2024).
+
+---
+
+## Direct Links
+- [Home & Portfolio](https://junaidas.in/)
+- [Projects](https://junaidas.in/#projects)
+- [Skills Matrix](https://junaidas.in/#skills)
+- [Articles & Research](https://junaidas.in/articles)
+- [Contact Junaid](https://junaidas.in/contact)
+- [Complete Machine-Readable Context](https://junaidas.in/llms-full.txt)

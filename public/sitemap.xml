@@ -1,37 +1,71 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://junaidas.in/</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://junaidas.in/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://junaidas.in/social-image.png</image:loc>
+      <image:title>Junaid A S - AI Engineer and Full-Stack Developer</image:title>
+      <image:caption>Official digital portfolio and engineering projects of Junaid A S</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://junaidas.in/projects/saybill</loc>
+    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://junaidas.in/static/saybill_scanner_mockup.png</image:loc>
+      <image:title>SayBill AI - Voice POS and Intelligent Inventory System</image:title>
+      <image:caption>AI-powered mobile retail billing and inventory management ecosystem built with Flutter and LLMs by Junaid</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://junaidas.in/projects/erms</loc>
+    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://junaidas.in/static/erms_dashboard_mockup.png</image:loc>
+      <image:title>ERMS - Educational Resource Management System</image:title>
+      <image:caption>High-performance student performance analytics and automated reporting engine engineered with Flask and SQLYOG</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://junaidas.in/articles</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://junaidas.in/articles/saybill-voice-pos</loc>
+    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://junaidas.in/static/saybill_dashboard_mockup.png</image:loc>
+      <image:title>Voice-First POS with Flutter and LLMs</image:title>
+      <image:caption>Architectural breakdown of Dart audio streaming isolates and instruction-tuned LLM JSON schema extraction</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://junaidas.in/articles/erms-database-architecture</loc>
+    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://junaidas.in/static/erms_dashboard_mockup.png</image:loc>
+      <image:title>Scale and Analytics: Architectural Design of ERMS</image:title>
+      <image:caption>Deep dive into Flask connection pooling, MySQL compound indexes, and database analytic window functions</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://junaidas.in/contact</loc>
+    <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

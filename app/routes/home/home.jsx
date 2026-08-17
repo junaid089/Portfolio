@@ -15,15 +15,20 @@ import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
 import { Profile } from './profile';
 import { Skills } from './skills';
+import { Metrics } from './metrics';
 import { Experience } from './experience';
 import { EducationCerts } from './education-certs';
 import { ProjectsGrid } from './projects-grid';
+import { Testimonials } from './testimonials';
+import { FAQ } from './faq';
 import { ProjectSummary } from './project-summary';
+import { ResumeModal } from '~/components/resume-modal';
+import { AiAssistant } from '~/components/ai-assistant';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
 
-// Prefetch draco decoader wasm
+// Prefetch draco decoder wasm
 export const links = () => {
   return [
     {
@@ -45,38 +50,64 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'AI Engineer & Full-Stack Developer',
-    description: `Portfolio of ${config.name} (Junaid AS) — an AI Engineer and Full-Stack Developer specializing in web & mobile apps, LLM integrations, and custom database pipelines.`,
+    title: 'AI Architect, AI Engineer & Automation Specialist',
+    description: `Official portfolio of ${config.name} (Junaid AS) — AI Architect, AI Engineer and Automation Specialist specializing in designing autonomous intelligent systems, enterprise task automation pipelines, LLM architectures, Flutter mobile apps, and scalable web backends.`,
     keywords: [
       'Junaid A S',
       'Junaid AS',
       'Junaid',
+      'junaid089',
+      'AI Architect',
       'AI Engineer',
+      'Automation Engineer',
+      'Task Automation Specialist',
+      'Autonomous AI Agents',
       'Full-Stack Developer',
       'Software Engineer',
-      'Portfolio',
-      'React Developer',
       'Flutter Developer',
+      'Python AI Engineer',
+      'SayBill AI',
+      'ERMS',
+      'RAG Architectures',
       'Palakkad',
-      'Kerala'
+      'Kerala',
+      'India'
     ]
   });
 };
 
+
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
+
   const intro = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
   const details = useRef();
   const skills = useRef();
+  const metrics = useRef();
   const experience = useRef();
   const education = useRef();
   const projects = useRef();
+  const testimonials = useRef();
+  const faq = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, details, skills, experience, education, projects];
+    const sections = [
+      intro,
+      projectOne,
+      projectTwo,
+      details,
+      skills,
+      metrics,
+      experience,
+      education,
+      projects,
+      testimonials,
+      faq,
+    ];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -100,10 +131,14 @@ export const Home = () => {
     );
 
     sections.forEach(section => {
-      sectionObserver.observe(section.current);
+      if (section.current) {
+        sectionObserver.observe(section.current);
+      }
     });
 
-    indicatorObserver.observe(intro.current);
+    if (intro.current) {
+      indicatorObserver.observe(intro.current);
+    }
 
     return () => {
       sectionObserver.disconnect();
@@ -167,11 +202,17 @@ export const Home = () => {
         sectionRef={details}
         visible={visibleSections.includes(details.current)}
         id="details"
+        onOpenResume={() => setResumeOpen(true)}
       />
       <Skills
         sectionRef={skills}
         visible={visibleSections.includes(skills.current)}
         id="skills"
+      />
+      <Metrics
+        sectionRef={metrics}
+        visible={visibleSections.includes(metrics.current)}
+        id="metrics"
       />
       <Experience
         sectionRef={experience}
@@ -188,7 +229,23 @@ export const Home = () => {
         visible={visibleSections.includes(projects.current)}
         id="projects"
       />
+      <Testimonials
+        sectionRef={testimonials}
+        visible={visibleSections.includes(testimonials.current)}
+        id="testimonials"
+      />
+      <FAQ
+        sectionRef={faq}
+        visible={visibleSections.includes(faq.current)}
+        id="faq"
+      />
+      <ResumeModal
+        isOpen={resumeOpen}
+        onClose={() => setResumeOpen(false)}
+      />
+      <AiAssistant />
       <Footer />
     </div>
   );
 };
+

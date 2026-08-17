@@ -22,9 +22,18 @@ export const meta = () => {
   return baseMeta({
     title: 'Contact',
     description:
-      'Send me a message if you’re interested in discussing a project or if you just want to say hi',
+      'Contact Junaid A S — AI Engineer & Full-Stack Developer for projects, consultations, or engineering collaborations.',
+    canonicalUrl: 'https://junaidas.in/contact',
+    keywords: [
+      'Contact Junaid A S',
+      'Hire AI Engineer Kerala',
+      'Hire Full-Stack Developer',
+      'Flutter Developer Contact',
+      'Junaid AS Email'
+    ]
   });
 };
+
 
 const MAX_EMAIL_LENGTH = 512;
 const MAX_MESSAGE_LENGTH = 4096;

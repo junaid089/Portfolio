@@ -27,12 +27,62 @@ const description =
 const roles = ['Full-Stack Development', 'Database Schema Design', 'System Architecture'];
 
 export const meta = () => {
-  return baseMeta({ title, description, prefix: 'Projects' });
+  return baseMeta({
+    title: 'ERMS — Educational Resource Management System',
+    description: 'Educational Resource Management System for student performance tracking and automated reporting engineered with Flask and SQLYOG by Junaid.',
+    prefix: 'Projects',
+    ogImage: '/static/erms_dashboard_mockup.png',
+    canonicalUrl: 'https://junaidas.in/projects/erms',
+    keywords: [
+      'ERMS',
+      'Educational Resource Management System',
+      'Flask Web App',
+      'SQLYOG MySQL Optimization',
+      'Junaid A S',
+      'Junaid',
+      'Database Schema Architecture'
+    ]
+  });
+};
+
+const ermsSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ERMS (Educational Resource Management System)",
+  "operatingSystem": "Web, Cloud",
+  "applicationCategory": "EducationalApplication",
+  "description": "Educational Resource Management System for student performance tracking and automated reporting engineered with Flask and SQLYOG.",
+  "author": {
+    "@type": "Person",
+    "name": "Junaid A S",
+    "url": "https://junaidas.in"
+  },
+  "creator": {
+    "@type": "Person",
+    "name": "Junaid A S",
+    "url": "https://junaidas.in"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Student performance and exam grade tracking",
+    "Real-time automated grade sheet calculations",
+    "Composite indexed relational database for sub-second queries",
+    "Responsive administrative interface"
+  ]
 };
 
 export function ERMS() {
   return (
     <Fragment>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ermsSchema) }}
+      />
+
       <style
         dangerouslySetInnerHTML={{
           __html: `

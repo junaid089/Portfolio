@@ -11,3 +11,4 @@ node_modules
 
 public/draco
 storybook-static
+vite.config.js.timestamp-*

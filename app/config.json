@@ -1,11 +1,15 @@
 {
   "name": "Junaid A S",
-  "role": "AI Engineer",
-  "disciplines": ["Full-Stack Developer", "Flutter Developer", "Product Designer", "Automation Expert"],
+  "alternateName": ["Junaid AS", "Junaid", "Junaid A.S.", "junaid089"],
+  "role": "AI Architect & Engineer",
+  "disciplines": ["AI Architect", "Automation Engineer", "Full-Stack Developer", "Flutter Developer", "Product Designer"],
   "url": "https://junaidas.in",
-  "bluesky": "",
-  "figma": "",
+  "email": "junu089@gmail.com",
+  "phone": "+917034092876",
+  "location": "Palakkad, Kerala, India",
   "github": "junaid089",
+  "linkedin": "https://www.linkedin.com/in/junaid-as",
   "repo": "https://github.com/junaid089/portfolio",
   "ascii": ""
 }
+

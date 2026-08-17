@@ -49,8 +49,8 @@ export const links = () => [
 export const loader = async ({ request, context }) => {
   const { url } = request;
   const { pathname } = new URL(url);
-  const pathnameSliced = pathname.endsWith('/') ? pathname.slice(0, -1) : url;
-  const canonicalUrl = `${config.url}${pathnameSliced}`;
+  const cleanPath = pathname === '/' ? '' : pathname.replace(/\/+$/, '');
+  const canonicalUrl = `${config.url}${cleanPath}`;
 
   const { getSession, commitSession } = createCookieSessionStorage({
     cookie: {
@@ -100,6 +100,106 @@ export default function App() {
     );
   }, []);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://junaidas.in/#person",
+        "name": "Junaid A S",
+        "alternateName": ["Junaid AS", "Junaid", "Junaid A.S.", "junaid089"],
+        "description": "AI Architect, AI Engineer and Automation Specialist specializing in designing end-to-end autonomous intelligent systems, enterprise task automation pipelines, LLM architectures, Flutter mobile apps, and scalable web platforms.",
+        "jobTitle": "AI Architect & Automation Engineer",
+        "gender": "Male",
+        "nationality": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "url": "https://junaidas.in",
+        "image": "https://junaidas.in/social-image.png",
+        "email": "mailto:junu089@gmail.com",
+        "telephone": "+917034092876",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Palakkad",
+          "addressRegion": "Kerala",
+          "addressCountry": "IN"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Artcl.in",
+          "url": "https://artcl.in"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Calicut"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "Mskills"
+          }
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "AI Architect & Automation Engineer",
+          "skills": "AI Architecture, Task Automation Engineering, Autonomous Agent Workflows, LLM Fine-Tuning, Prompt Engineering, RAG Systems, Flutter, Python, Dart, React, Django, PostgreSQL, Cloud Infrastructure"
+        },
+        "sameAs": [
+          "https://github.com/junaid089",
+          "https://www.linkedin.com/in/junaid-as"
+        ],
+        "knowsAbout": [
+          "AI Architecture & System Design",
+          "Enterprise Task Automation & Agentic Workflows",
+          "Autonomous AI Agents",
+          "Artificial Intelligence & Machine Learning",
+          "Large Language Models (LLMs) & Prompt Engineering",
+          "Generative AI & RAG Pipelines",
+          "Mobile Application Development (Flutter)",
+          "Full-Stack Web Development (React, Node.js, Django, Flask)",
+          "Database Schema Design & Query Optimization (PostgreSQL, MySQL, SQLYOG)",
+          "Computer Vision & Speech Processing",
+          "Cloud Deployment & DevOps (AWS, Firebase, Vercel, Docker)"
+        ],
+        "mainEntityOfPage": {
+          "@id": "https://junaidas.in/#profile"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://junaidas.in/#website",
+        "url": "https://junaidas.in",
+        "name": "Junaid A S | AI Architect, Engineer & Automation Specialist",
+        "alternateName": "Junaid Portfolio",
+        "description": "Official portfolio, research writeups, and AI engineering projects of Junaid A S.",
+        "publisher": {
+          "@id": "https://junaidas.in/#person"
+        },
+        "author": {
+          "@id": "https://junaidas.in/#person"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://junaidas.in/#profile",
+        "url": "https://junaidas.in",
+        "name": "Junaid A S - Profile & Digital Portfolio",
+        "isPartOf": {
+          "@id": "https://junaidas.in/#website"
+        },
+        "about": {
+          "@id": "https://junaidas.in/#person"
+        },
+        "mainEntity": {
+          "@id": "https://junaidas.in/#person"
+        },
+        "primaryImageOfPage": "https://junaidas.in/social-image.png"
+      }
+    ]
+  };
+
   return (
     <html lang="en">
       <head>
@@ -115,38 +215,12 @@ export default function App() {
         <Meta />
         <Links />
         <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Summary Feed" />
+        <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full LLM Knowledge Profile" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Junaid A S",
-              "alternateName": "Junaid AS",
-              "description": "AI Engineer and Full-Stack Developer specializing in web & mobile applications, LLM integration, and database systems.",
-              "jobTitle": "AI Engineer & Full-Stack Developer",
-              "url": "https://junaidas.in",
-              "email": "junu089@gmail.com",
-              "telephone": "+917034092876",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Palakkad",
-                "addressRegion": "Kerala",
-                "addressCountry": "IN"
-              },
-              "sameAs": [
-                "https://github.com/junaid089",
-                "https://www.linkedin.com/in/junaid-as"
-              ],
-              "knowsAbout": [
-                "Artificial Intelligence",
-                "Software Engineering",
-                "Flutter",
-                "React",
-                "Flask",
-                "Database Optimization"
-              ]
-            })
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>

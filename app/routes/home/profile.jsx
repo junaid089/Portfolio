@@ -20,38 +20,39 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Junaid A S, an AI Engineer and Full-Stack Developer from Kerala, India. I work across the complete product lifecycle: planning, UI/UX design, frontend development, backend APIs, AI workflows, cloud deployment, and hosting.
+      I’m Junaid A S, an AI Architect, AI Engineer, and Automation Specialist from Kerala, India. I specialize in designing autonomous intelligent architectures and engineering deep automation workflows that automate complex tasks end-to-end.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      My core services include:
+      My core areas of expertise include:
     </Text>
     <List className={styles.description} data-visible={visible}>
       <ListItem>
-        <strong>AI-Powered Web & Mobile Apps:</strong> Integrating LLMs, Vision AI, and automation into real products.
+        <strong>AI Architecture & Task Automation Engineering:</strong> Architecting autonomous agent pipelines, intelligent data workflows, and automating complex business tasks using LLMs and modern automation frameworks.
       </ListItem>
       <ListItem>
-        <strong>Full-Stack Web Development:</strong> End-to-end website delivery using React, Node.js, Django, and REST APIs.
+        <strong>AI-Powered Web & Mobile Apps:</strong> Integrating LLMs, Voice AI, Vision models, and real-time inference into Flutter, React, and native apps.
       </ListItem>
       <ListItem>
-        <strong>Mobile App Development:</strong> Cross-platform iOS and Android apps with polished UI using Flutter.
+        <strong>Full-Stack & Backend Systems:</strong> High-performance APIs and scalable architectures using Python (Django, Flask, FastAPI), Node.js, and relational database indexing.
       </ListItem>
       <ListItem>
-        <strong>Cloud Deployment & Hosting:</strong> Scalable deployments on Firebase, AWS, Vercel, and Hostinger.
+        <strong>Cloud Deployment & DevOps:</strong> Containerized, resilient deployments on AWS, Docker, Firebase, and Cloudflare Pages.
       </ListItem>
     </List>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      My technical toolkit includes Python, Dart, JavaScript/TypeScript, SQL, Flutter, Django, React, and Node.js. For AI and Machine Learning, I frequently work with OpenAI, Hugging Face, RAG pipelines, and Prompt Engineering.
+      My technical toolkit spans Python, Dart, JavaScript/TypeScript, SQL, Flutter, Django, React, FastAPI, Docker, and AWS. In AI and Automation, I architect multi-agent systems, RAG pipelines, Prompt Engineering systems, and task automation orchestrations.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Currently, I work as an AI Engineer at Artcl.in, where I develop AI-powered software solutions focusing on automation and ML model implementation. Previously, I was a Python Full Stack Developer Intern at Febno.co, building and maintaining web apps using Django and PostgreSQL.
+      Currently, I work as an AI Engineer at Artcl.in, where I architect AI-powered software solutions, enterprise automation pipelines, and machine learning implementations. Previously, I was a Python Full Stack Developer Intern at Febno.co.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time, I like to explore new AI/ML tools, and build intelligent automation workflows. I’m always down for hearing about new projects, so feel free to drop me a line.
+      I love collaborating on ambitious AI architectures, autonomous agents, and intelligent automation challenges. Feel free to reach out and connect!
     </Text>
   </Fragment>
 );
 
-export const Profile = ({ id, visible, sectionRef }) => {
+
+export const Profile = ({ id, visible, sectionRef, onOpenResume }) => {
   const [focused, setFocused] = useState(false);
   const titleId = `${id}-title`;
 
@@ -71,15 +72,27 @@ export const Profile = ({ id, visible, sectionRef }) => {
           <div className={styles.content} ref={nodeRef}>
             <div className={styles.column}>
               <ProfileText visible={visible} titleId={titleId} />
-              <Button
-                secondary
-                className={styles.button}
-                data-visible={visible}
-                href="/contact"
-                icon="send"
-              >
-                Send me a message
-              </Button>
+              <div className={styles.buttonGroup} data-visible={visible}>
+                <Button
+                  secondary
+                  className={styles.button}
+                  data-visible={visible}
+                  href="/contact"
+                  icon="send"
+                >
+                  Send me a message
+                </Button>
+                {onOpenResume && (
+                  <Button
+                    className={styles.button}
+                    data-visible={visible}
+                    onClick={onOpenResume}
+                    icon="arrow-right"
+                  >
+                    View ATS Resume
+                  </Button>
+                )}
+              </div>
             </div>
             <div className={styles.column}>
               <div className={styles.tag} aria-hidden>
@@ -114,3 +127,4 @@ export const Profile = ({ id, visible, sectionRef }) => {
     </Section>
   );
 };
+

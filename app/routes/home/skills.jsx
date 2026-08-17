@@ -7,26 +7,31 @@ import styles from './skills.module.css';
 
 const skillCategories = [
   {
+    title: 'AI Architecture & Automation',
+    skills: ['Autonomous AI Agents', 'Agentic Workflows', 'Task Automation Engineering', 'RAG Pipelines', 'Prompt Engineering', 'LangChain', 'LangGraph', 'n8n Workflows', 'API Orchestration']
+  },
+  {
     title: 'Languages',
     skills: ['Python', 'Dart', 'JavaScript', 'TypeScript', 'PHP', 'C', 'C++', 'SQL', 'HTML5', 'CSS3']
   },
   {
-    title: 'AI / ML',
-    skills: ['OpenAI API', 'Hugging Face', 'Google Vision AI', 'TensorFlow', 'PyTorch', 'RAG Pipelines', 'Prompt Engineering']
+    title: 'AI & ML Tooling',
+    skills: ['OpenAI API', 'Hugging Face Transformers', 'Google Vision AI', 'TensorFlow', 'PyTorch', 'Vector Databases', 'Model Inference']
   },
   {
-    title: 'Frameworks',
-    skills: ['Flutter', 'Django', 'Flask', 'React.js', 'Node.js', 'Express.js', 'FastAPI', 'CodeIgniter', 'Bootstrap', 'REST API', 'GraphQL']
+    title: 'Frameworks & Systems',
+    skills: ['Flutter', 'Django', 'Flask', 'FastAPI', 'React.js', 'Node.js', 'Express.js', 'CodeIgniter', 'Bootstrap', 'REST APIs', 'GraphQL']
   },
   {
-    title: 'Databases',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'MariaDB', 'SQLite', 'Firebase', 'Supabase']
+    title: 'Databases & Optimization',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'MariaDB', 'SQLite', 'Firebase Firestore', 'Supabase', 'SQLYOG']
   },
   {
-    title: 'Tools & Platforms',
-    skills: ['Git', 'GitHub', 'GitLab', 'Docker', 'AWS', 'Firebase Hosting', 'Vercel', 'Hostinger', 'Figma']
+    title: 'Cloud, DevOps & Tools',
+    skills: ['Docker', 'AWS (SES, EC2, S3)', 'Git', 'GitHub', 'GitLab', 'Vercel', 'Firebase Hosting', 'Cloudflare Pages', 'Figma']
   }
 ];
+
 
 export const Skills = ({ id, visible, sectionRef }) => {
   const [focused, setFocused] = useState(false);

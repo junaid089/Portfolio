@@ -14,14 +14,6 @@ export const navLinks = [
     pathname: '/#skills',
   },
   {
-    label: 'Experience',
-    pathname: '/#experience',
-  },
-  {
-    label: 'Education',
-    pathname: '/#education',
-  },
-  {
     label: 'Projects',
     pathname: '/#projects',
   },
@@ -34,6 +26,8 @@ export const navLinks = [
     pathname: '/contact',
   },
 ];
+
+
 
 export const socialLinks = [
   {

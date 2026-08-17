@@ -1,0 +1,235 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space2XL) var(--spaceL);
+  overflow-y: auto;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--borderRadiusM);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spaceL) var(--spaceXL);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in lab, var(--background) 92%, var(--text) 8%);
+  gap: var(--spaceM);
+  flex-wrap: wrap;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceM);
+}
+
+.atsBadge {
+  font-size: var(--fontSizeBodyS);
+  color: var(--accent);
+  background: color-mix(in lab, var(--accent) 15%, transparent);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: var(--fontWeightMedium);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceS);
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: var(--textLight);
+  cursor: pointer;
+  padding: var(--spaceS);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--borderRadiusS);
+  transition: color var(--durationM) ease, background var(--durationM) ease;
+}
+
+.closeBtn:hover {
+  color: var(--text);
+  background: color-mix(in lab, var(--text) 10%, transparent);
+}
+
+.resumePaper {
+  padding: var(--space2XL) var(--space3XL);
+  overflow-y: auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+  background: var(--background);
+}
+
+.resumeHeader {
+  text-align: center;
+  margin-bottom: var(--spaceXL);
+}
+
+.name {
+  font-size: var(--fontSizeHeadingM);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: 0.05em;
+  margin: 0 0 4px 0;
+  color: var(--text);
+}
+
+.jobTitle {
+  font-size: var(--fontSizeBodyL);
+  font-weight: var(--fontWeightMedium);
+  color: var(--accent);
+  margin: 0 0 8px 0;
+}
+
+.contactLine, .linksLine {
+  font-size: var(--fontSizeBodyS);
+  color: var(--textLight);
+  margin: 4px 0;
+}
+
+.contactLine a, .linksLine a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section {
+  margin-bottom: var(--spaceL);
+}
+
+.sectionHeading {
+  font-size: var(--fontSizeBodyM);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0 var(--spaceM) 0;
+}
+
+.summaryText {
+  font-size: var(--fontSizeBodyS);
+  color: var(--textLight);
+  margin: 0;
+}
+
+.job, .projectItem {
+  margin-bottom: var(--spaceM);
+}
+
+.jobHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fontSizeBodyS);
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.jobSub {
+  font-size: var(--fontSizeBodyS);
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.bulletList {
+  margin: 4px 0 0 0;
+  padding-left: var(--spaceL);
+  font-size: var(--fontSizeBodyS);
+  color: var(--textLight);
+}
+
+.bulletList li {
+  margin-bottom: 4px;
+}
+
+.skillLine {
+  font-size: var(--fontSizeBodyS);
+  color: var(--textLight);
+  margin: 6px 0;
+}
+
+.skillLine strong {
+  color: var(--text);
+}
+
+.certList {
+  font-size: var(--fontSizeBodyS);
+  color: var(--textLight);
+  margin-top: 6px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .resumePaper, .resumePaper * {
+    visibility: visible;
+  }
+  .resumePaper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+  }
+  .resumePaper a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  .jobTitle, .atsBadge, .jobSub {
+    color: #222 !important;
+  }
+  .summaryText, .bulletList, .skillLine, .certList, .contactLine, .linksLine {
+    color: #333 !important;
+  }
+  .divider {
+    background: #ccc !important;
+  }
+}
+
+@media (max-width: 696px) {
+  .resumePaper {
+    padding: var(--spaceL);
+  }
+  .header {
+    padding: var(--spaceM);
+  }
+  .jobHeader {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

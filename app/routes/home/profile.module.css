@@ -132,6 +132,13 @@
   }
 }
 
+.buttonGroup {
+  display: flex;
+  gap: var(--spaceM);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .button {
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationL);
@@ -141,3 +148,4 @@
     opacity: 1;
   }
 }
+

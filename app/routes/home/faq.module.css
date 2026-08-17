@@ -1,0 +1,122 @@
+.faqSection {
+  padding: var(--space2XL) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--maxWidthL);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space2XL);
+}
+
+.header {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--durationL) ease, transform var(--durationL) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header[data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: var(--fontWeightMedium);
+  color: var(--accent);
+  background: color-mix(in lab, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in lab, var(--accent) 30%, transparent);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: var(--spaceS);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: var(--spaceS);
+}
+
+.description {
+  color: var(--textLight);
+  max-width: 600px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceM);
+}
+
+.item {
+  background: color-mix(in lab, var(--background) 92%, var(--text) 8%);
+  border: 1px solid var(--border);
+  border-radius: var(--borderRadiusM);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--durationL) ease, transform var(--durationL) cubic-bezier(0.16, 1, 0.3, 1), border-color var(--durationM) ease;
+}
+
+.item[data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item[data-open='true'] {
+  border-color: var(--accent);
+}
+
+.questionBtn {
+  width: 100%;
+  padding: var(--spaceL);
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spaceM);
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  transition: background var(--durationS) ease;
+}
+
+.questionBtn:hover {
+  background: color-mix(in lab, var(--text) 4%, transparent);
+}
+
+.questionText {
+  font-size: var(--fontSizeBodyL);
+  font-weight: var(--fontWeightMedium);
+  line-height: 1.4;
+}
+
+.chevron {
+  font-size: 1.5rem;
+  color: var(--accent);
+  font-weight: var(--fontWeightBold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.answerContainer {
+  padding: 0 var(--spaceL) var(--spaceL) var(--spaceL);
+  animation: expand 0.2s ease-out;
+}
+
+@keyframes expand {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.answerText {
+  font-size: var(--fontSizeBodyM);
+  color: var(--textLight);
+  line-height: 1.6;
+  margin: 0;
+}
